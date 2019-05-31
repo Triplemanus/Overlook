@@ -25,3 +25,27 @@ $(document).ready(function(){
 	})
 
 })
+
+var data;
+fetch('https://fe-apps.herokuapp.com/api/v1/overlook/1903/users/users')
+  .then(function(response) {
+    return response.json()
+  })
+  .then(function(parsedData) {
+    data = parsedData.data
+    console.log(data)
+  })
+  .catch(err => console.error(err));
+
+
+var roomData;
+fetch('https://fe-apps.herokuapp.com/api/v1/overlook/1903/rooms/rooms')
+  .then(function(response) {
+    return response.json()
+  })
+  .then(function(parsedData) {
+    roomData = parsedData.data
+    console.log(roomData)
+  })
+  .catch(err => console.error(err));
+  
