@@ -1,6 +1,10 @@
+//
 import $ from 'jquery';
 
 export default {
-
-$(.testFetch)  
+  testFetchResponse() {
+    $('#testFetch').click(function(event) {
+      console.log('Hello! Welcome to hell.');
+    });
+  }
 }

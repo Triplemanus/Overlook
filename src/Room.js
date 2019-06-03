@@ -1,4 +1,6 @@
 import domUpdates from './domUpdates.js';
+import rooms from './data/testData.js';
+
 class Room {
   constructor (number, roomType, bidet, bedSize, numBeds, costPerNight) {
     this.number = number;
@@ -29,17 +31,18 @@ class Room {
   }
 
   fetchRoomData() {
-    const roomData = fetch('https://fe-apps.herokuapp.com/api/v1/overlook/1903/rooms/rooms')
+    let roomData = fetch('https://fe-apps.herokuapp.com/api/v1/overlook/1903/rooms/rooms')
   .then(function(response) {
     return response.json()
   })
   .then(function(parsedData) {
     roomData = parsedData.data
-    // console.log(roomData)
+    console.log('fetchRoomData');
+      // console.log(roomData.rooms)
   })
   .catch(err => console.error(err));
-
-  return roomData;
+  
+  return roomData.rooms;
   }
 }
 
